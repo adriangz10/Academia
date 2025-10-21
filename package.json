@@ -1,0 +1,23 @@
+{
+  "name": "academia",
+  "version": "1.0.0",
+  "description": "Este es un monorepo para un sistema de gestión de biblioteca, implementado con Arquitectura Limpia, TDD, TypeScript y Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "workspaces": [
+    "domain",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.1.3",
+    "ts-jest": "^29.4.2",
+    "typescript": "^5.9.2"
+  }
+}
