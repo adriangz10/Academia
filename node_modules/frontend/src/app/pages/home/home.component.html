@@ -1,0 +1,2 @@
+<h1>Libros Disponibles</h1>
+<app-book-list [books]="(books$ | async) || []" (loan)="onLoan($event)" (return)="onReturn($event)"></app-book-list>

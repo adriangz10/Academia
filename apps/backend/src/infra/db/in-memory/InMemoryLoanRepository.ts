@@ -23,6 +23,10 @@ export class InMemoryLoanRepository implements ILoanRepository {
     return this.loans.filter(l => l.userId === userId && !l.returnDate);
   }
 
+  async findByUserId(userId: string): Promise<Loan[]> {
+    return this.loans.filter(l => l.userId === userId);
+  }
+
   async update(loan: Loan): Promise<Loan> {
     const index = this.loans.findIndex(l => l.id === loan.id);
     if (index !== -1) {
