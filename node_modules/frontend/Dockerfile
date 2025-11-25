@@ -15,7 +15,6 @@ RUN npm install
 
 # Copiar el resto del código fuente del frontend y archivos de configuración relevantes
 COPY apps/frontend/ ./apps/frontend/
-COPY angular.json .
 COPY tsconfig.json .
 
 # Establecer el directorio de trabajo específico para el frontend
