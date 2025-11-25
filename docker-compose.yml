@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./apps/backend:/usr/src/app/apps/backend
+      - ./domain:/usr/src/app/domain
+      - /usr/src/app/node_modules
+    environment:
+      - PORT=3000
+      - JWT_SECRET=un_secreto_muy_seguro_para_desarrollo
+    networks:
+      - academi-net
+
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./apps/frontend:/usr/src/app/apps/frontend
+      - /usr/src/app/apps/frontend/node_modules
+    networks:
+      - academi-net
+
+networks:
+  academi-net:
+    driver: bridge
+
